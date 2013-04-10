@@ -1,0 +1,13 @@
+D:\Users\UmaisSiddiqui\documents\visual studio 2012\Projects\DemoEF\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+D:\Users\UmaisSiddiqui\documents\visual studio 2012\Projects\DemoEF\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\Users\UmaisSiddiqui\documents\visual studio 2012\Projects\DemoEF\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\Users\UmaisSiddiqui\documents\visual studio 2012\Projects\DemoEF\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Users\UmaisSiddiqui\documents\visual studio 2012\Projects\DemoEF\ConsoleApplication1\bin\Debug\DemoEF.dll
+D:\Users\UmaisSiddiqui\documents\visual studio 2012\Projects\DemoEF\ConsoleApplication1\bin\Debug\EntityFramework.dll
+D:\Users\UmaisSiddiqui\documents\visual studio 2012\Projects\DemoEF\ConsoleApplication1\bin\Debug\DemoEF.pdb
+D:\Users\UmaisSiddiqui\documents\visual studio 2012\Projects\DemoEF\ConsoleApplication1\bin\Debug\EntityFramework.xml
+D:\Users\UmaisSiddiqui\documents\visual studio 2012\Projects\DemoEF\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\Users\UmaisSiddiqui\documents\visual studio 2012\Projects\DemoEF\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+D:\Users\UmaisSiddiqui\Documents\Visual Studio 2012\Projects\DemoEF\ConsoleApplication1\bin\Debug\Ninject.dll
+D:\Users\UmaisSiddiqui\Documents\Visual Studio 2012\Projects\DemoEF\ConsoleApplication1\bin\Debug\Ninject.pdb
+D:\Users\UmaisSiddiqui\Documents\Visual Studio 2012\Projects\DemoEF\ConsoleApplication1\bin\Debug\Ninject.xml

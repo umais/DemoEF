@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyTestDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MyTestDbModelStoreContainer">
+    <EntitySet Name="Applicant" EntityType="MyTestDbModel.Store.Applicant" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Applicant">
+    <Key>
+      <PropertyRef Name="appID" />
+    </Key>
+    <Property Name="appID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicantName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Applicant_MI" Type="nvarchar" MaxLength="255" />
+    <Property Name="ApplicantLastName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Applicant_Residence" Type="nvarchar" MaxLength="255" />
+    <Property Name="Applicant_Residence_City" Type="nvarchar" MaxLength="255" />
+    <Property Name="Applicant_Residence_State" Type="nvarchar" MaxLength="255" />
+    <Property Name="Applicant_Residence_Zip" Type="nvarchar" MaxLength="255" />
+    <Property Name="Applicant_Mailing_Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="Applicant_mailing_Zip" Type="nvarchar" MaxLength="10" />
+    <Property Name="Applicant_Mailing_City" Type="nvarchar" MaxLength="255" />
+    <Property Name="Applicant_Mailing_State" Type="nvarchar" MaxLength="2" />
+    <Property Name="Applicant_PhoneNumber" Type="nvarchar" MaxLength="10" />
+    <Property Name="Applicant_Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="Applicant_DOB" Type="date" />
+  </EntityType>
+</Schema>

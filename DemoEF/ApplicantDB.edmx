@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MyTestDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MyTestDbModelStoreContainer">
+          <EntitySet Name="Applicant" EntityType="MyTestDbModel.Store.Applicant" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Applicant">
+          <Key>
+            <PropertyRef Name="appID" />
+          </Key>
+          <Property Name="appID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicantName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Applicant_MI" Type="nvarchar" MaxLength="255" />
+          <Property Name="ApplicantLastName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Applicant_Residence" Type="nvarchar" MaxLength="255" />
+          <Property Name="Applicant_Residence_City" Type="nvarchar" MaxLength="255" />
+          <Property Name="Applicant_Residence_State" Type="nvarchar" MaxLength="255" />
+          <Property Name="Applicant_Residence_Zip" Type="nvarchar" MaxLength="255" />
+          <Property Name="Applicant_Mailing_Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="Applicant_mailing_Zip" Type="nvarchar" MaxLength="10" />
+          <Property Name="Applicant_Mailing_City" Type="nvarchar" MaxLength="255" />
+          <Property Name="Applicant_Mailing_State" Type="nvarchar" MaxLength="2" />
+          <Property Name="Applicant_PhoneNumber" Type="nvarchar" MaxLength="10" />
+          <Property Name="Applicant_Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="Applicant_DOB" Type="date" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyTestDbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MyTestDbEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Applicants" EntityType="MyTestDbModel.Applicant" />
+        </EntityContainer>
+        <EntityType Name="Applicant">
+          <Key>
+            <PropertyRef Name="appID" />
+          </Key>
+          <Property Name="appID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicantName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Applicant_MI" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicantLastName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Applicant_Residence" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Applicant_Residence_City" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Applicant_Residence_State" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Applicant_Residence_Zip" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Applicant_Mailing_Address" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Applicant_mailing_Zip" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Applicant_Mailing_City" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Applicant_Mailing_State" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="Applicant_PhoneNumber" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Applicant_Email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Applicant_DOB" Type="DateTime" Precision="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyTestDbModelStoreContainer" CdmEntityContainer="MyTestDbEntities">
+          <EntitySetMapping Name="Applicants">
+            <EntityTypeMapping TypeName="MyTestDbModel.Applicant">
+              <MappingFragment StoreEntitySet="Applicant">
+                <ScalarProperty Name="appID" ColumnName="appID" />
+                <ScalarProperty Name="ApplicantName" ColumnName="ApplicantName" />
+                <ScalarProperty Name="Applicant_MI" ColumnName="Applicant_MI" />
+                <ScalarProperty Name="ApplicantLastName" ColumnName="ApplicantLastName" />
+                <ScalarProperty Name="Applicant_Residence" ColumnName="Applicant_Residence" />
+                <ScalarProperty Name="Applicant_Residence_City" ColumnName="Applicant_Residence_City" />
+                <ScalarProperty Name="Applicant_Residence_State" ColumnName="Applicant_Residence_State" />
+                <ScalarProperty Name="Applicant_Residence_Zip" ColumnName="Applicant_Residence_Zip" />
+                <ScalarProperty Name="Applicant_Mailing_Address" ColumnName="Applicant_Mailing_Address" />
+                <ScalarProperty Name="Applicant_mailing_Zip" ColumnName="Applicant_mailing_Zip" />
+                <ScalarProperty Name="Applicant_Mailing_City" ColumnName="Applicant_Mailing_City" />
+                <ScalarProperty Name="Applicant_Mailing_State" ColumnName="Applicant_Mailing_State" />
+                <ScalarProperty Name="Applicant_PhoneNumber" ColumnName="Applicant_PhoneNumber" />
+                <ScalarProperty Name="Applicant_Email" ColumnName="Applicant_Email" />
+                <ScalarProperty Name="Applicant_DOB" ColumnName="Applicant_DOB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

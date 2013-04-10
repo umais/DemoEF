@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StatusReportModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="StatusReportEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Assignments" EntityType="StatusReportModel.Assignment" />
+    <EntitySet Name="Projects" EntityType="StatusReportModel.Project" />
+    <EntitySet Name="Reports" EntityType="StatusReportModel.Report" />
+    <EntitySet Name="sysdiagrams" EntityType="StatusReportModel.sysdiagram" />
+    <EntitySet Name="Tasks" EntityType="StatusReportModel.Task" />
+    <EntitySet Name="TeamMates" EntityType="StatusReportModel.TeamMate" />
+    <EntitySet Name="Tickets" EntityType="StatusReportModel.Ticket" />
+    <EntitySet Name="TicketTypes" EntityType="StatusReportModel.TicketType" />
+    <AssociationSet Name="FK_Assignments_Reports" Association="StatusReportModel.FK_Assignments_Reports">
+      <End Role="Reports" EntitySet="Reports" />
+      <End Role="Assignments" EntitySet="Assignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assignments_TeamMates" Association="StatusReportModel.FK_Assignments_TeamMates">
+      <End Role="TeamMates" EntitySet="TeamMates" />
+      <End Role="Assignments" EntitySet="Assignments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_Projects" Association="StatusReportModel.FK_Tasks_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_Reports" Association="StatusReportModel.FK_Tasks_Reports">
+      <End Role="Reports" EntitySet="Reports" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tickets_Reports" Association="StatusReportModel.FK_Tickets_Reports">
+      <End Role="Reports" EntitySet="Reports" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_TeamMates" Association="StatusReportModel.FK_Tasks_TeamMates">
+      <End Role="TeamMates" EntitySet="TeamMates" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tickets_TeamMates" Association="StatusReportModel.FK_Tickets_TeamMates">
+      <End Role="TeamMates" EntitySet="TeamMates" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tickets_TicketTypes" Association="StatusReportModel.FK_Tickets_TicketTypes">
+      <End Role="TicketTypes" EntitySet="TicketTypes" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Assignment">
+    <Key>
+      <PropertyRef Name="AssignmentID" />
+    </Key>
+    <Property Name="AssignmentID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ReportID" Type="Int32" Nullable="false" />
+    <Property Name="TeamMateID" Type="Int32" Nullable="false" />
+    <Property Name="Assignment1" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Report" Relationship="StatusReportModel.FK_Assignments_Reports" FromRole="Assignments" ToRole="Reports" />
+    <NavigationProperty Name="TeamMate" Relationship="StatusReportModel.FK_Assignments_TeamMates" FromRole="Assignments" ToRole="TeamMates" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="Int32" Nullable="false" />
+    <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PlanviewID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Tasks" Relationship="StatusReportModel.FK_Tasks_Projects" FromRole="Projects" ToRole="Tasks" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ReportID" />
+    </Key>
+    <Property Name="ReportID" Type="Int32" Nullable="false" />
+    <Property Name="WeekEnding" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Assignments" Relationship="StatusReportModel.FK_Assignments_Reports" FromRole="Reports" ToRole="Assignments" />
+    <NavigationProperty Name="Tasks" Relationship="StatusReportModel.FK_Tasks_Reports" FromRole="Reports" ToRole="Tasks" />
+    <NavigationProperty Name="Tickets" Relationship="StatusReportModel.FK_Tickets_Reports" FromRole="Reports" ToRole="Tickets" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="TaskID" />
+    </Key>
+    <Property Name="TaskID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ReportID" Type="Int32" Nullable="false" />
+    <Property Name="ProjectID" Type="Int32" Nullable="false" />
+    <Property Name="TeamMateID" Type="Int32" Nullable="false" />
+    <Property Name="Task1" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="isComplete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Project" Relationship="StatusReportModel.FK_Tasks_Projects" FromRole="Tasks" ToRole="Projects" />
+    <NavigationProperty Name="Report" Relationship="StatusReportModel.FK_Tasks_Reports" FromRole="Tasks" ToRole="Reports" />
+    <NavigationProperty Name="TeamMate" Relationship="StatusReportModel.FK_Tasks_TeamMates" FromRole="Tasks" ToRole="TeamMates" />
+  </EntityType>
+  <EntityType Name="TeamMate">
+    <Key>
+      <PropertyRef Name="TeamMateID" />
+    </Key>
+    <Property Name="TeamMateID" Type="Int32" Nullable="false" />
+    <Property Name="Firstname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Lastname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Title" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Assignments" Relationship="StatusReportModel.FK_Assignments_TeamMates" FromRole="TeamMates" ToRole="Assignments" />
+    <NavigationProperty Name="Tasks" Relationship="StatusReportModel.FK_Tasks_TeamMates" FromRole="TeamMates" ToRole="Tasks" />
+    <NavigationProperty Name="Tickets" Relationship="StatusReportModel.FK_Tickets_TeamMates" FromRole="TeamMates" ToRole="Tickets" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="TicketID" />
+    </Key>
+    <Property Name="TicketID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ReportID" Type="Int32" Nullable="false" />
+    <Property Name="TeamMateID" Type="Int32" Nullable="false" />
+    <Property Name="TicketType" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="TicketNumber" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="isComplete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Report" Relationship="StatusReportModel.FK_Tickets_Reports" FromRole="Tickets" ToRole="Reports" />
+    <NavigationProperty Name="TeamMate" Relationship="StatusReportModel.FK_Tickets_TeamMates" FromRole="Tickets" ToRole="TeamMates" />
+    <NavigationProperty Name="TicketType1" Relationship="StatusReportModel.FK_Tickets_TicketTypes" FromRole="Tickets" ToRole="TicketTypes" />
+  </EntityType>
+  <EntityType Name="TicketType">
+    <Key>
+      <PropertyRef Name="TicketType1" />
+    </Key>
+    <Property Name="TicketType1" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="Tickets" Relationship="StatusReportModel.FK_Tickets_TicketTypes" FromRole="TicketTypes" ToRole="Tickets" />
+  </EntityType>
+  <Association Name="FK_Assignments_Reports">
+    <End Role="Reports" Type="StatusReportModel.Report" Multiplicity="1" />
+    <End Role="Assignments" Type="StatusReportModel.Assignment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reports">
+        <PropertyRef Name="ReportID" />
+      </Principal>
+      <Dependent Role="Assignments">
+        <PropertyRef Name="ReportID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assignments_TeamMates">
+    <End Role="TeamMates" Type="StatusReportModel.TeamMate" Multiplicity="1" />
+    <End Role="Assignments" Type="StatusReportModel.Assignment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TeamMates">
+        <PropertyRef Name="TeamMateID" />
+      </Principal>
+      <Dependent Role="Assignments">
+        <PropertyRef Name="TeamMateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_Projects">
+    <End Role="Projects" Type="StatusReportModel.Project" Multiplicity="1" />
+    <End Role="Tasks" Type="StatusReportModel.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_Reports">
+    <End Role="Reports" Type="StatusReportModel.Report" Multiplicity="1" />
+    <End Role="Tasks" Type="StatusReportModel.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reports">
+        <PropertyRef Name="ReportID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="ReportID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tickets_Reports">
+    <End Role="Reports" Type="StatusReportModel.Report" Multiplicity="1" />
+    <End Role="Tickets" Type="StatusReportModel.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reports">
+        <PropertyRef Name="ReportID" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="ReportID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_TeamMates">
+    <End Role="TeamMates" Type="StatusReportModel.TeamMate" Multiplicity="1" />
+    <End Role="Tasks" Type="StatusReportModel.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TeamMates">
+        <PropertyRef Name="TeamMateID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="TeamMateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tickets_TeamMates">
+    <End Role="TeamMates" Type="StatusReportModel.TeamMate" Multiplicity="1" />
+    <End Role="Tickets" Type="StatusReportModel.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TeamMates">
+        <PropertyRef Name="TeamMateID" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="TeamMateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tickets_TicketTypes">
+    <End Role="TicketTypes" Type="StatusReportModel.TicketType" Multiplicity="1" />
+    <End Role="Tickets" Type="StatusReportModel.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TicketTypes">
+        <PropertyRef Name="TicketType1" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="TicketType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

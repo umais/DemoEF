@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyTestDbModelStoreContainer" CdmEntityContainer="MyTestDbEntities">
+    <EntitySetMapping Name="Applicants">
+      <EntityTypeMapping TypeName="MyTestDbModel.Applicant">
+        <MappingFragment StoreEntitySet="Applicant">
+          <ScalarProperty Name="appID" ColumnName="appID" />
+          <ScalarProperty Name="ApplicantName" ColumnName="ApplicantName" />
+          <ScalarProperty Name="Applicant_MI" ColumnName="Applicant_MI" />
+          <ScalarProperty Name="ApplicantLastName" ColumnName="ApplicantLastName" />
+          <ScalarProperty Name="Applicant_Residence" ColumnName="Applicant_Residence" />
+          <ScalarProperty Name="Applicant_Residence_City" ColumnName="Applicant_Residence_City" />
+          <ScalarProperty Name="Applicant_Residence_State" ColumnName="Applicant_Residence_State" />
+          <ScalarProperty Name="Applicant_Residence_Zip" ColumnName="Applicant_Residence_Zip" />
+          <ScalarProperty Name="Applicant_Mailing_Address" ColumnName="Applicant_Mailing_Address" />
+          <ScalarProperty Name="Applicant_mailing_Zip" ColumnName="Applicant_mailing_Zip" />
+          <ScalarProperty Name="Applicant_Mailing_City" ColumnName="Applicant_Mailing_City" />
+          <ScalarProperty Name="Applicant_Mailing_State" ColumnName="Applicant_Mailing_State" />
+          <ScalarProperty Name="Applicant_PhoneNumber" ColumnName="Applicant_PhoneNumber" />
+          <ScalarProperty Name="Applicant_Email" ColumnName="Applicant_Email" />
+          <ScalarProperty Name="Applicant_DOB" ColumnName="Applicant_DOB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

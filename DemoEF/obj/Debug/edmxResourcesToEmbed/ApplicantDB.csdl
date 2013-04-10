@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyTestDbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MyTestDbEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Applicants" EntityType="MyTestDbModel.Applicant" />
+  </EntityContainer>
+  <EntityType Name="Applicant">
+    <Key>
+      <PropertyRef Name="appID" />
+    </Key>
+    <Property Name="appID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicantName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_MI" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicantLastName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_Residence" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_Residence_City" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_Residence_State" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_Residence_Zip" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_Mailing_Address" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_mailing_Zip" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_Mailing_City" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_Mailing_State" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_PhoneNumber" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_Email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_DOB" Type="DateTime" Precision="0" />
+  </EntityType>
+</Schema>

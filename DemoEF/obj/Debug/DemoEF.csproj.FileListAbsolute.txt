@@ -1,0 +1,11 @@
+d:\users\umaissiddiqui\documents\visual studio 2012\Projects\DemoEF\DemoEF\bin\Debug\DemoEF.dll.config
+d:\users\umaissiddiqui\documents\visual studio 2012\Projects\DemoEF\DemoEF\bin\Debug\DemoEF.dll
+d:\users\umaissiddiqui\documents\visual studio 2012\Projects\DemoEF\DemoEF\bin\Debug\DemoEF.pdb
+d:\users\umaissiddiqui\documents\visual studio 2012\Projects\DemoEF\DemoEF\bin\Debug\EntityFramework.dll
+d:\users\umaissiddiqui\documents\visual studio 2012\Projects\DemoEF\DemoEF\bin\Debug\EntityFramework.xml
+d:\users\umaissiddiqui\documents\visual studio 2012\Projects\DemoEF\DemoEF\obj\Debug\DemoEF.csprojResolveAssemblyReference.cache
+d:\users\umaissiddiqui\documents\visual studio 2012\Projects\DemoEF\DemoEF\obj\Debug\DemoEF.dll
+d:\users\umaissiddiqui\documents\visual studio 2012\Projects\DemoEF\DemoEF\obj\Debug\DemoEF.pdb
+D:\Users\UmaisSiddiqui\Documents\Visual Studio 2012\Projects\DemoEF\DemoEF\bin\Debug\Ninject.dll
+D:\Users\UmaisSiddiqui\Documents\Visual Studio 2012\Projects\DemoEF\DemoEF\bin\Debug\Ninject.pdb
+D:\Users\UmaisSiddiqui\Documents\Visual Studio 2012\Projects\DemoEF\DemoEF\bin\Debug\Ninject.xml
